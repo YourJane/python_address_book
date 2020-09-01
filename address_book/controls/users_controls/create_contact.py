@@ -16,6 +16,7 @@ def create_contact():
     address_street = input("Street: ").capitalize().strip()
 
     social_network_list = ""
+    print("Chose social network to add:")
     for i in range(0, len(g_social_network_list)):
         social_network_list += ("{0}. {1}\n".format(i, g_social_network_list[i]))
     input_message = 'Please enter the number of the social network you want to add: '
