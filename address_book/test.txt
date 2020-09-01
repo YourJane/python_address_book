@@ -1,0 +1,1 @@
+<class 'address_book.controls.contact.Contact'>: {'name': 'Jane', 'last_name': 'Rubtsova', 'phone': ['71638216319'], 'social_account': {'facebook': 'jane'}, 'city': 'Cork', 'address_street': '', 'second_name': '', 'email': ['']}
