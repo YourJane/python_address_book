@@ -1,3 +1,4 @@
+import os
 from address_book.controls.users_controls.address_book_menu import address_book_menu
 from address_book.controls.users_controls.address_book_quit import address_book_quit
 from address_book.controls.users_controls.create_contact import create_contact
@@ -13,6 +14,17 @@ from address_book.controls.users_controls.search_contact import search_contact
 from address_book.controls.validation_functions import validate_the_menu_action
 
 g_address_book = []
+
+
+def import_file_before_start(address_book):
+    if os.path.isfile("exported_address_book.json"):
+        import_address_book(address_book)
+    else:
+        return None
+
+
+import_file_before_start(g_address_book)
+
 
 while True:
     get_menu_action, get_menu = address_book_menu()
