@@ -1,28 +1,25 @@
-from address_book.controls.global_var import g_address_book
-
-
-def search_contact_in_all_fields(search_key):
+def search_contact_in_all_fields(search_key, address_book):
     found_contacts = []
-    for index in range(0, len(g_address_book)):
-        for key in g_address_book[index]:
-            if g_address_book[index][key] == search_key:
-                found_contacts.append(g_address_book[index])
+    for index in range(0, len(address_book)):
+        for key in address_book[index]:
+            if address_book[index][key] == search_key:
+                found_contacts.append(address_book[index])
     return found_contacts
 
 
-def search_contact_by_name(search_key):
+def search_contact_by_name(search_key, address_book):
     found_contacts = []
-    for i in range(0, len(g_address_book)):
-        if g_address_book[i].name == search_key:
-            found_contacts.append(g_address_book[i])
+    for i in range(0, len(address_book)):
+        if address_book[i].name == search_key:
+            found_contacts.append(address_book[i])
     return found_contacts
 
 
-def search_contact_by_last_name(search_key):
+def search_contact_by_last_name(search_key, address_book):
     found_contacts = []
-    for i in range(0, len(g_address_book)):
-        if g_address_book[i].last_name == search_key:
-            found_contacts.append(g_address_book[i])
+    for i in range(0, len(address_book)):
+        if address_book[i].last_name == search_key:
+            found_contacts.append(address_book[i])
     return found_contacts
 
 
