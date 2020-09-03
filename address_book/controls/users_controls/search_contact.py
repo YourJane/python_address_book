@@ -3,17 +3,17 @@ from address_book.controls.validation_functions import validate_the_menu_action_
 from address_book.controls.validation_functions import validate_required_fields_not_empty
 
 
-def search_contact():
+def search_contact(address_book):
     menu = "1. SEARCH IN ALL FIELDS\n2. SEARCH BY NAME\n3. SEARCH BY LAST NAME"
     input_message = "Please choose the desired action by entering the number accordingly"
     action = validate_the_menu_action_loop(menu, input_message)
     search_key = validate_required_fields_not_empty("Please enter your search query.\n>>> ")
     if action == 1:
-        found_contacts = search_contact_in_all_fields(search_key.capitalize().strip())
+        found_contacts = search_contact_in_all_fields(search_key.capitalize().strip(), address_book)
         return show_search_results(found_contacts, search_key)
     elif action == 2:
-        found_contacts = search_contact_by_name(search_key.capitalize().strip())
+        found_contacts = search_contact_by_name(search_key.capitalize().strip(), address_book)
         return show_search_results(found_contacts, search_key)
     elif action == 3:
-        found_contacts = search_contact_by_last_name(search_key.capitalize().strip())
+        found_contacts = search_contact_by_last_name(search_key.capitalize().strip(), address_book)
         return show_search_results(found_contacts, search_key)
