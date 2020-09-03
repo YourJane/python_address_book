@@ -1,7 +1,6 @@
 import re
 from address_book.controls.global_var import error_message_out_of_range
 from address_book.controls.global_var import error_message_on_alpha
-from address_book.controls.global_var import g_address_book
 from address_book.controls.global_var import g_social_network_list
 
 
@@ -16,10 +15,10 @@ def validate_the_menu_action(menu_action, menu):
     return menu_action
 
 
-def validate_the_entered_index(contact_index, contact_attribute, input_message):
+def validate_the_entered_index(contact_index, contact_attribute, input_message, address_book):
     values_list = ""
-    for v in getattr(g_address_book[contact_index], contact_attribute):
-        values_list += "{0}. {1}\n".format(getattr(g_address_book[contact_index], contact_attribute).index(v), v)
+    for v in getattr(address_book[contact_index], contact_attribute):
+        values_list += "{0}. {1}\n".format(getattr(address_book[contact_index], contact_attribute).index(v), v)
     while True:
         print(values_list)
         value_index = validate_the_menu_action(input(input_message), values_list)
@@ -41,10 +40,10 @@ def validate_the_menu_action_loop(menu, input_message):
     return menu_action
 
 
-def validate_social_network(contact_index, input_message):
+def validate_social_network(contact_index, input_message, address_book):
     social_key_value_list = ""
     social_key_list = ""
-    for key, value in g_address_book[contact_index].social_account.items():
+    for key, value in address_book[contact_index].social_account.items():
         social_key_value_list += "{0}: {1}\n".format(key, value)
         social_key_list += "{}, ".format(key)
 
