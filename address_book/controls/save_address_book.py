@@ -1,4 +1,5 @@
 import re
+import jsonpickle
 
 
 def save_address_book(address_book):
@@ -11,7 +12,8 @@ def save_address_book(address_book):
                       "'*','&', '&' and spaces.")
             continue
     full_file_name = file_name+".txt"
-    for i in range(0, len(address_book)):
+    address_book_in_json = jsonpickle.encode(address_book, unpicklable=True)
+    for i in range(0, len(address_book_in_json)):
         with open(full_file_name, 'w') as f:
-            print(address_book[i], file=f)
+            print(address_book_in_json, file=f)
     return print("Address book is saved in {} file.".format(full_file_name))

@@ -1,5 +1,5 @@
 def address_book_menu():
-    input('PRESS ANY KEY TO ENTER CONTACTS MENU')
+    input('PRESS "ENTER" KEY TO ENTER CONTACTS MENU')
     print("<<<<<<<<<<<<<< CONTACTS MENU >>>>>>>>>>>>>>")
     print("Please enter the number of the action you want to do.")
     menu = "1. ADD NEW CONTACT\n2. UPDATE CONTACT\n3. VIEW CONTACT\n4. VIEW ALL CONTACTS\n5. DELETE CONTACT\

@@ -4,7 +4,7 @@ from address_book.controls.validation_functions import validate_the_menu_action_
 
 def delete_contact(address_book):
     list_of_contacts = view_all(address_book)
-    input_message = "Which contact you want to delete? Please enter the number of that contact."
+    input_message = "Which contact you want to delete? Please enter the number of that contact.\n>>> "
     contact_index = validate_the_menu_action_loop(list_of_contacts, input_message)
     del address_book[contact_index]
     return print("Contact deleted")
